@@ -34,52 +34,74 @@
     <!-- Image Placeholder / Abstract UI -->
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-8 aspect-[16/9] relative group-hover:shadow-md transition-shadow">
         {#if image === 'collateral'}
-            <!-- Collateral UI -->
+            <!-- Invoice Audit UI -->
             <div class="p-6 h-full flex flex-col">
                 <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
-                    <div class="font-bold text-gray-800">Collateral</div>
+                    <div class="font-bold text-gray-800">Invoice Audit</div>
                     <div class="flex gap-2">
-                        <div class="w-20 h-8 bg-gray-100 rounded"></div>
+                        <div class="px-3 py-1 bg-red-50 text-red-600 text-xs font-semibold rounded">3 Disputed</div>
                     </div>
                 </div>
                 <div class="space-y-3">
                     <div class="flex justify-between text-xs text-gray-400 uppercase tracking-wider">
-                        <span>Collateral Type</span>
-                        <span>Value</span>
+                        <span>Charge Type</span>
+                        <span>Amount</span>
                         <span>Status</span>
                     </div>
-                    {#each [1, 2, 3] as i}
                     <div class="flex justify-between items-center py-2 border-b border-gray-50">
-                        <div class="w-24 h-4 bg-gray-100 rounded"></div>
-                        <div class="w-16 h-4 bg-gray-100 rounded"></div>
-                        <div class="w-12 h-4 bg-green-100 text-green-600 rounded-full text-[10px] flex items-center justify-center">Active</div>
+                        <div class="text-xs text-gray-600">Detention Fee</div>
+                        <div class="text-xs font-semibold text-gray-900">$2,850</div>
+                        <div class="px-2 py-1 bg-red-100 text-red-600 rounded-full text-[10px] font-semibold">Invalid</div>
                     </div>
-                    {/each}
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <div class="text-xs text-gray-600">Demurrage</div>
+                        <div class="text-xs font-semibold text-gray-900">$1,200</div>
+                        <div class="px-2 py-1 bg-green-100 text-green-600 rounded-full text-[10px] font-semibold">Valid</div>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <div class="text-xs text-gray-600">Per Diem</div>
+                        <div class="text-xs font-semibold text-gray-900">$450</div>
+                        <div class="px-2 py-1 bg-red-100 text-red-600 rounded-full text-[10px] font-semibold">Disputed</div>
+                    </div>
                 </div>
             </div>
         {:else if image === 'connect'}
-            <!-- Connect UI -->
-            <div class="p-6 h-full flex flex-col items-center justify-center bg-gray-50">
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 w-3/4">
-                    <div class="flex items-center gap-3 mb-4">
+            <!-- Container Tracking UI -->
+            <div class="p-6 h-full flex flex-col bg-gray-50">
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-3">
+                    <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                         </div>
-                        <div class="text-sm font-medium">Payment Received Webhook</div>
+                        <div>
+                            <div class="text-xs font-semibold text-gray-900">MSCU8234567</div>
+                            <div class="text-[10px] text-gray-500">LA/LB Port Terminal 2</div>
+                        </div>
                     </div>
-                    <div class="h-px bg-gray-100 w-full mb-4"></div>
-                    <div class="flex justify-center">
-                        <div class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded">Branch on due date</div>
+                    <div class="flex gap-2 text-[10px]">
+                        <div class="px-2 py-1 bg-green-50 text-green-600 rounded font-semibold">Available</div>
+                        <div class="px-2 py-1 bg-gray-100 text-gray-600 rounded">Last Free: Dec 18</div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-gray-900">TEMU9876543</div>
+                            <div class="text-[10px] text-gray-500">NY/NJ Port Terminal 5</div>
+                        </div>
                     </div>
                 </div>
             </div>
         {:else if image === 'data'}
-            <!-- Data UI -->
+            <!-- Terminal Data UI -->
             <div class="p-6 h-full flex flex-col">
                 <div class="flex gap-4 mb-6">
                     <div class="w-1/2 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                        <div class="text-xs text-gray-400 mb-1">Avg. min. pay cents</div>
-                        <div class="text-xl font-bold text-gray-900">333.33</div>
+                        <div class="text-xs text-gray-400 mb-1">Terminals Connected</div>
+                        <div class="text-xl font-bold text-gray-900">230+</div>
                         <div class="mt-4 h-16 flex items-end gap-1">
                             {#each [40, 60, 30, 70, 50, 80] as h}
                                 <div class="w-full bg-blue-200 rounded-t" style="height: {h}%"></div>
@@ -87,8 +109,8 @@
                         </div>
                     </div>
                     <div class="w-1/2 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                        <div class="text-xs text-gray-400 mb-1">Average balance</div>
-                        <div class="text-xl font-bold text-gray-900">$3,183.48</div>
+                        <div class="text-xs text-gray-400 mb-1">Container Events Tracked</div>
+                        <div class="text-xl font-bold text-gray-900">15M+</div>
                          <div class="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div class="h-full bg-blue-500 w-2/3"></div>
                         </div>
@@ -96,74 +118,79 @@
                 </div>
             </div>
         {:else if image === 'lab'}
-            <!-- Lab UI -->
+            <!-- Dispute Management UI -->
             <div class="p-6 h-full bg-white">
-                <div class="font-mono text-xs text-gray-400 mb-4">Action Timeline</div>
+                <div class="font-mono text-xs text-gray-400 mb-4">Dispute Timeline</div>
                 <div class="space-y-4 relative pl-4 border-l border-gray-200">
                     <div class="relative">
                         <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-green-500 border-2 border-white"></div>
-                        <div class="text-xs font-medium text-gray-900">Cycle 1: Dec 13 12:43PM - 15 Dec @ 00:00AM</div>
-                        <div class="mt-1 text-xs text-gray-500 pl-2 border-l border-gray-100 ml-1">Automation: Account Created</div>
+                        <div class="text-xs font-medium text-gray-900">Invoice #DET-2847 Disputed</div>
+                        <div class="mt-1 text-xs text-gray-500 pl-2 border-l border-gray-100 ml-1">AI detected invalid detention charge</div>
                     </div>
                      <div class="relative">
                         <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-green-500 border-2 border-white"></div>
-                        <div class="text-xs font-medium text-gray-900">Minimum Payment</div>
-                         <div class="mt-1 text-xs text-gray-500 pl-2 border-l border-gray-100 ml-1">Automation: Generate Statement</div>
+                        <div class="text-xs font-medium text-gray-900">Evidence Compiled</div>
+                         <div class="mt-1 text-xs text-gray-500 pl-2 border-l border-gray-100 ml-1">Timestamped terminal data attached</div>
+                    </div>
+                     <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-blue-400 border-2 border-white"></div>
+                        <div class="text-xs font-medium text-gray-900">Dispute Submitted</div>
+                         <div class="mt-1 text-xs text-gray-500 pl-2 border-l border-gray-100 ml-1">Awaiting carrier response</div>
                     </div>
                 </div>
             </div>
         {:else if image === 'preview'}
-            <!-- Preview UI -->
+            <!-- Cost Analytics UI -->
             <div class="p-6 h-full">
                 <table class="w-full text-xs">
                     <thead>
                         <tr class="text-gray-400 border-b border-gray-100">
-                            <th class="text-left pb-2 font-normal">Action</th>
-                            <th class="text-right pb-2 font-normal">Current</th>
-                            <th class="text-right pb-2 font-normal">Preview</th>
+                            <th class="text-left pb-2 font-normal">Metric</th>
+                            <th class="text-right pb-2 font-normal">This Month</th>
+                            <th class="text-right pb-2 font-normal">Forecast</th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-600">
                         <tr class="border-b border-gray-50">
-                            <td class="py-2">Account Status</td>
-                            <td class="py-2 text-right text-red-500">Suspended</td>
-                            <td class="py-2 text-right text-green-500">Active</td>
+                            <td class="py-2">Per Diem Fees</td>
+                            <td class="py-2 text-right text-red-500">$45,200</td>
+                            <td class="py-2 text-right text-green-500">$12,800</td>
                         </tr>
                          <tr class="border-b border-gray-50">
-                            <td class="py-2">Minimum Payment</td>
-                            <td class="py-2 text-right">$2,950.00</td>
-                            <td class="py-2 text-right">$0.00</td>
+                            <td class="py-2">Disputed Charges</td>
+                            <td class="py-2 text-right">$28,500</td>
+                            <td class="py-2 text-right">$32,000</td>
                         </tr>
                          <tr>
-                            <td class="py-2">Total Balance</td>
-                            <td class="py-2 text-right">$5,925.00</td>
-                            <td class="py-2 text-right">$2,975.00</td>
+                            <td class="py-2">Total Savings</td>
+                            <td class="py-2 text-right font-semibold text-green-600">$142,000</td>
+                            <td class="py-2 text-right font-semibold text-green-600">$156,000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         {:else if image === 'guard'}
-            <!-- Guard UI -->
+            <!-- Port Coverage UI -->
             <div class="p-6 h-full flex flex-col justify-center">
-                <div class="text-xs text-gray-400 mb-2">Customer ID: 42784724728</div>
+                <div class="text-xs text-gray-400 mb-2">Real-Time Port Data</div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-3 bg-green-50 rounded border border-green-100">
-                        <div class="text-[10px] text-green-600 uppercase">Account status</div>
-                        <div class="text-sm font-bold text-green-700">Active</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                        <div class="text-[10px] text-blue-600 uppercase">LA/LB Port</div>
+                        <div class="text-sm font-bold text-blue-700">Connected</div>
                     </div>
-                    <div class="p-3 bg-red-50 rounded border border-red-100">
-                        <div class="text-[10px] text-red-600 uppercase">Account substatus</div>
-                        <div class="text-sm font-bold text-red-700">Delinquent</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                        <div class="text-[10px] text-blue-600 uppercase">NY/NJ Port</div>
+                        <div class="text-sm font-bold text-blue-700">Connected</div>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-4">
                     <div>
-                        <div class="text-[10px] text-gray-400 uppercase">Missed payments</div>
-                        <div class="text-lg font-bold">3</div>
+                        <div class="text-[10px] text-gray-400 uppercase">Terminals</div>
+                        <div class="text-lg font-bold">230+</div>
                     </div>
                      <div>
-                        <div class="text-[10px] text-gray-400 uppercase">Payment frequency</div>
-                        <div class="text-lg font-bold">1</div>
+                        <div class="text-[10px] text-gray-400 uppercase">Steamship Lines</div>
+                        <div class="text-lg font-bold">23</div>
                     </div>
                 </div>
             </div>
